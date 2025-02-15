@@ -5,6 +5,12 @@ Explanation: All of the prerequisites are separated by the "or" keyword, so you 
 END EXAMPLE 1
 
 BEGIN EXAMPLE 2
+INPUT: "Prerequisites: permission from instructor"
+OUTPUT: []
+Explanation: If you don't think a valid course code exists, return an empty list. In the absolute worst cast, Never return an error, always an empty list.
+END EXAMPLE 2
+
+BEGIN EXAMPLE 2
 INPUT: "Prerequisites: MAT257Y5 or (MAT236H5 and MAT244H5)"
 OUTPUT: ["MAT236H5", "MAT244H5"]
 Explanation: within the brackets, there is an "and" between the two courses. This means that BOTH courses must be selected.
@@ -16,3 +22,4 @@ OUTPUT: ["MAT257Y5"]
 Explanation: Since there is an "or" statement between MAT257Y5 and the brackets containing the two other courses, only one needs to be selected.
 In this case, only "MAT257Y5" is selected.
 END EXAMPLE 3
+
