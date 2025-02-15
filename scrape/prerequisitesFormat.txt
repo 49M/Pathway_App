@@ -12,4 +12,6 @@ EXAMPLE BEGIN
 ["MAT102H5", "CSC148H5", "CSC108H5"]
 EXAMPLE END
 
-You must remember that you are formatting a list of prerequisites from a University's program requirements webpage. You need to understand this context to be able to pick courses correctly for a student. 
+You must remember that you are formatting a list of prerequisites from a University's program requirements webpage. You need to understand this context to be able to pick courses correctly for a student.
+
+

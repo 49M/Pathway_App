@@ -1,0 +1,18 @@
+BEGIN EXAMPLE 1
+INPUT: "Prerequisites: MAT132H5 or MAT135H5 or MAT137H5 or MAT157H5 or MAT135H1 or MATA29H3 or MATA30H3 or MATA31H3"
+OUTPUT: ["MAT135H5"]
+Explanation: All of the prerequisites are separated by the "or" keyword, so you only need to pick one.
+END EXAMPLE 1
+
+BEGIN EXAMPLE 2
+INPUT: "Prerequisites: MAT257Y5 or (MAT236H5 and MAT244H5)"
+OUTPUT: ["MAT236H5", "MAT244H5"]
+Explanation: within the brackets, there is an "and" between the two courses. This means that BOTH courses must be selected.
+END EXAMPLE 2
+
+BEGIN EXAMPLE 3
+INPUT: "Prerequisites: MAT257Y5 or (MAT236H5 and MAT244H5)"
+OUTPUT: ["MAT257Y5"]
+Explanation: Since there is an "or" statement between MAT257Y5 and the brackets containing the two other courses, only one needs to be selected.
+In this case, only "MAT257Y5" is selected.
+END EXAMPLE 3
