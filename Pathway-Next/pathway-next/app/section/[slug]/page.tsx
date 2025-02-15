@@ -30,15 +30,12 @@ export default async function Page({
     params: Promise<{ slug: string }>
   }) {
     
-    const onClick = () => {
-
-    }
     const slug = (await params).slug
     const name = get_name(slug)
     return (
         <div className="relative w-full h-screen justify-center">
           <Header title={`Discover The Realm of ${name}`} />
-            <CourseSearch/>
+            <CourseSearch path={slug}/>
         </div>
       );
   }
