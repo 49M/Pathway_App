@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -25,7 +27,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  place-items: auto;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -45,6 +47,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  justify-content: center;
 }
 button:hover {
   border-color: #646cff;
@@ -66,3 +69,13 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.button-container {
+  display: flex;
+  -ms-flex-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 35vh;
+}
+
