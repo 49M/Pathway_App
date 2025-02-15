@@ -1,0 +1,15 @@
+A Prerequisites Document consists of an array of prerequisites.
+
+The following is an example of the format you must respond with. 
+
+EXAMPLE BEGIN
+["XXXXXXXX", "XXXXXXXX", ...]
+EXAMPLE END
+
+Note that the array ["XXXXXXXX", ...] indicates arbitrary data. That is, "XXXXXXXX" is an arbitrary course code. Here is a more concerete example:
+
+EXAMPLE BEGIN
+["MAT102H5", "CSC148H5", "CSC108H5"]
+EXAMPLE END
+
+You must remember that you are formatting a list of prerequisites from a University's program requirements webpage. You need to understand this context to be able to pick courses correctly for a student. 
