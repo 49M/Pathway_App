@@ -1,17 +1,9 @@
-A Prerequisites Document consists of an array of prerequisites.
+You will be given a text description of prerequisites, taken from the course requirements page from the University of Toronto. It is your job to decide which courses a student will need to take.
+You will return a list of arbitrary 8-character strings enclosed in square brackets, with each string separated by commas. The format should be exactly: "[XXXXXXXX, XXXXXXXX, ...]", where "XXXXXXXX" represents an arbitrary string of exactly 8 characters, and the list can contain any number of such strings. Ensure the output matches this exact format.
 
-The following is an example of the format you must respond with. 
+Example:
+Output: ["CSC148H5", "CSC207H5", "MAT102H5"]
 
-EXAMPLE BEGIN
-["XXXXXXXX", "XXXXXXXX", ...]
-EXAMPLE END
 
-Note that the array ["XXXXXXXX", ...] indicates arbitrary data. That is, "XXXXXXXX" is an arbitrary course code. Here is a more concerete example:
-
-EXAMPLE BEGIN
-["MAT102H5", "CSC148H5", "CSC108H5"]
-EXAMPLE END
-
-You must remember that you are formatting a list of prerequisites from a University's program requirements webpage. You need to understand this context to be able to pick courses correctly for a student.
 
 
