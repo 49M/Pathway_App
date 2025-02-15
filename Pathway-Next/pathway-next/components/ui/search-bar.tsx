@@ -7,12 +7,10 @@ import { useState } from "react"
 export function SearchBar({onClick}: {onClick: any}) {
 
   const [searchQuery, setSearchQuery] = useState('')
-  const [filteredRecommendations, setFilteredRecommendations] = useState<string[]>([])
-
+  
   const examples = [
-    "Sample ideas",
     "(Computer Science) I want to dive into game dev",
-    "(Physics) I want to uncover the mysteries of the universe",
+    "(Physics) I want to uncover the mysteries of the universe through quantum physics",
     "(Cinematography) I want to craft mind-blowing visuals that push the boundaries of storytelling"
   ]
 
@@ -21,10 +19,6 @@ export function SearchBar({onClick}: {onClick: any}) {
   }
 
   const handleSearchClick = () => {
-    const filtered = examples.filter((example) =>
-      example.toLowerCase().includes(searchQuery.toLowerCase())
-    )
-    setFilteredRecommendations(filtered)
     onClick()
   }
 
@@ -41,21 +35,13 @@ export function SearchBar({onClick}: {onClick: any}) {
         <Button type="submit" onClick={handleSearchClick}>Search</Button>
       </div>
 
-      {/* Display the filtered recommendations */}
+      {/* Fixed Recommendations Text */}
       <div className="mt-4 space-y-2">
-        {filteredRecommendations.length > 0 ? (
-          filteredRecommendations.map((recommendation, index) => (
-            <div key={index} className="italic text-gray-400">
-              {recommendation}
-            </div>
-          ))
-        ) : (
-          <div className="italic text-gray-400">
-            {examples.map((example, index) => (
-              <div key={index}>{example}</div>
-            ))}
-          </div>
-        )}
+        <div className="italic text-gray-400">
+          {examples.map((example, index) => (
+            <div key={index}>{example}</div>
+          ))}
+        </div>
       </div>
 
       {/* Original Accordion Section */}
