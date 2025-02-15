@@ -6,8 +6,8 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/
 export function SearchBar({onClick, isCS}: {onClick: any, isCS: boolean}) {
   return (
     <div>
-    <div className="flex w-full items-center space-x-2">
-      <Input type="email" placeholder="Message Pathway" />
+    <div className="flex w-full items-center space-x-2 ">
+      <Input type="email" className='bg-primary-foreground'placeholder="Message Pathway" />
       <Button type="submit" onClick={onClick}>Submit</Button>
     </div>
     <Accordion type="single" collapsible className="w-full mt-40 space-y-2">
