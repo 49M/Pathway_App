@@ -13,6 +13,7 @@ import {
   CommandShortcut,
 } from "@/components/ui/command"
 import { SearchBar } from "@/components/ui/search-bar";
+import { CourseSearch } from "@/components/ui/course-search";
 
 function get_name(str: string) {
     const words = str.split("-")
@@ -33,14 +34,11 @@ export default async function Page({
 
     }
     const slug = (await params).slug
-    const isCS = slug == "/section/computer-science"
     const name = get_name(slug)
     return (
         <div className="relative w-full h-screen justify-center">
           <Header title={`Discover The Realm of ${name}`} />
-          <div className='px-[30%]'>
-            <SearchBar onClick={undefined} isCS={isCS}></SearchBar>
-          </div>
+            <CourseSearch/>
         </div>
       );
   }

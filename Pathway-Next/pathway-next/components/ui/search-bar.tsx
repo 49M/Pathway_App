@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
 
-export function SearchBar({onClick, isCS}: {onClick: any, isCS: boolean}) {
+export function SearchBar({onClick}: {onClick: any}) {
   return (
     <div>
     <div className="flex w-full items-center space-x-2 ">
