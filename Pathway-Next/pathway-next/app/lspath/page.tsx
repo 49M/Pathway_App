@@ -14,6 +14,7 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@/components/ui/command"
+import { HoverCard } from "@radix-ui/react-hover-card";
 
 interface Props {}
 
@@ -22,9 +23,9 @@ const LSPath = (props: Props) => {
 
   useEffect(() => {
       const bubblesData = [
-        { size: 150, label: "Anthropology", color: "#67e84a" },
-        { size: 150, label: "Biology", color: "#67e84a"},
-        { size: 150, label: "Chemistry", color: "#edeb61"}
+        { size: 150, label: "Anthropology", color: "#67e84a", hovercard: "oiwegnew"},
+        { size: 150, label: "Biology", color: "#67e84a", hovercard: "wergwgwegwegwegew"},
+        { size: 150, label: "Chemistry", color: "#edeb61", hovercard: "efwoe oe eno en jen "}
         // { size: 150, label: "Ecology & E", color: "#edeb61" },
         // { size: 150, label: "Databases", color: "#fa3e3e" }
       ];
@@ -55,6 +56,7 @@ const LSPath = (props: Props) => {
               size={bubble.size}
               label={bubble.label}
               color={bubble.color}
+              hovercard={bubble.hovercard}
             />
           ))}
           

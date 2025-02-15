@@ -14,6 +14,7 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@/components/ui/command"
+import { HoverCard } from "@radix-ui/react-hover-card";
 
 interface Props {}
 
@@ -22,9 +23,9 @@ const MathPath = (props: Props) => {
 
   useEffect(() => {
       const bubblesData = [
-        { size: 150, label: "Calculus", color: "#67e84a" },
-        { size: 150, label: "Algebra", color: "#67e84a"},
-        { size: 150, label: "Differential Equations", color: "#edeb61"},
+        { size: 150, label: "Calculus", color: "#67e84a", hovercard: "wiegowiegoewn woegnowengw"},
+        { size: 150, label: "Algebra", color: "#67e84a", hovercard: "weigwebkgijweng"},
+        { size: 150, label: "Differential Equations", color: "#edeb61", hovercard: "weognwejgnwejalsllsamdla"},
         { size: 150, label: "Analysis", color: "#edeb61" },
         // { size: 150, label: "Further Studies", color: "#fa3e3e" }
       ];
@@ -55,6 +56,7 @@ const MathPath = (props: Props) => {
               size={bubble.size}
               label={bubble.label}
               color={bubble.color}
+              hovercard={bubble.hovercard}
             />
           ))}
       </div>

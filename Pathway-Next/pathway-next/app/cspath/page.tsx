@@ -15,6 +15,7 @@ import {
   CommandShortcut,
 } from "@/components/ui/command"
 
+
 interface Props {}
 
 const CSPath = (props: Props) => {
@@ -22,11 +23,11 @@ const CSPath = (props: Props) => {
 
   useEffect(() => {
     const bubblesData = [
-      { size: 150, label: "Algorithms", color: "#67e84a" },
-      { size: 150, label: "AI", color: "#67e84a"},
-      { size: 150, label: "Databases", color: "#edeb61"},
-      { size: 150, label: "Data Structures", color: "#edeb61" },
-      { size: 150, label: "Machine Learning", color: "#fa3e3e" }
+      { size: 150, label: "Algorithms", color: "#67e84a", hovercard: "Awengoiwhngowegowegowgowegnewogweowgno"},
+      { size: 150, label: "AI", color: "#67e84a", hovercard: "B"},
+      { size: 150, label: "Databases", color: "#edeb61", hovercard: "C"},
+      { size: 150, label: "Data Structures", color: "#edeb61", hovercard: "D"},
+      { size: 150, label: "Machine Learning", color: "#fa3e3e", hovercard: "E"}
     ];
 
     setBubbles(bubblesData);
@@ -54,6 +55,7 @@ const CSPath = (props: Props) => {
               size={bubble.size}
               label={bubble.label}
               color={bubble.color}
+              hovercard={bubble.hovercard}
             />
           ))}
       </div>
