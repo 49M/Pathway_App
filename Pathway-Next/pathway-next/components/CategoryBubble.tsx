@@ -9,7 +9,7 @@ interface CategoryBubbleProps {
 const CategoryBubble: React.FC<CategoryBubbleProps> = ({ size, label, color }) => {
   return (
     <div
-      className="flex items-center justify-center rounded-full text-lg text-black"
+      className="flex items-center justify-center rounded-full text-lg text-black text-center break-words"
       style={{ width: size, height: size, backgroundColor: color }}
     >
       {label}
