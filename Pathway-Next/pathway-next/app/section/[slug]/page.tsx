@@ -12,6 +12,7 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@/components/ui/command"
+import { SearchBar } from "@/components/ui/search-bar";
 
 function get_name(str: string) {
     const words = str.split("-")
@@ -27,20 +28,18 @@ export default async function Page({
   }: {
     params: Promise<{ slug: string }>
   }) {
+    
+    const onClick = () => {
+
+    }
     const slug = (await params).slug
+    const isCS = slug == "/section/computer-science"
     const name = get_name(slug)
     return (
         <div className="relative w-full h-screen justify-center">
           <Header title={`Discover The Realm of ${name}`} />
-          <div>
-            <Command className="max-w-[calc(100vw-300px)] mx-auto w-full">
-              <CommandInput placeholder="" />
-              <CommandList>
-                <CommandEmpty>No results found.</CommandEmpty>
-                <CommandGroup heading="Example Prompts">
-                </CommandGroup>
-              </CommandList>
-            </Command>
+          <div className='px-[30%]'>
+            <SearchBar onClick={undefined} isCS={isCS}></SearchBar>
           </div>
         </div>
       );

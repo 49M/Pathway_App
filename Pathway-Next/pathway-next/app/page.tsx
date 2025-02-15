@@ -37,7 +37,7 @@ export default function Page() {
             {sections.map((section) => {
                 return (
                     <CommandItem className='hover:cursor-pointer' key={section.href}>
-                        <Link href={section.href}>{section.name}</Link>
+                        <Link className='px-4' href={section.href}>{section.name}</Link>
                     </CommandItem>
                 )
             })}
