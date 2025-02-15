@@ -16,8 +16,6 @@ const sections = [
 
 export default function Page() {
   const [open, setOpen] = React.useState(false)
-  const router = useRouter()
-
   return (
     <>
     <div className='flex w-full flex-col'> 

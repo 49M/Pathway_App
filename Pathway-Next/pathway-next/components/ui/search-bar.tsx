@@ -2,12 +2,14 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
+import { useState } from "react"
 export function SearchBar({ onClick, disabled }: { onClick: any, disabled: boolean }) {
+    const [currentValue, setValue] = useState("")
     return (
         <div>
             <div className="flex w-full items-center space-x-2 ">
-                <Input disabled={disabled} type="email" className='bg-primary-foreground' placeholder="Message Pathway" />
-                <Button disabled={disabled} type="submit" onClick={onClick}>Submit</Button>
+                <Input disabled={disabled} onChange={(e) => setValue(e.target.value)} type="email" className='bg-primary-foreground' placeholder="Message Pathway" />
+                <Button disabled={disabled} type="submit" onClick={() => {onClick(currentValue)}}>Submit</Button>
             </div>
             <Accordion type="single" collapsible className="w-full mt-40 space-y-2">
                 <AccordionItem value="item-1">
