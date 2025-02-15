@@ -1,3 +1,15 @@
+You have the task of extracting course codes for university classes from some text. You will return a list of course codes based on the given formatting rules. 
+
+RULES:
+1. The format should be exactly: "[XXXXXXXX, XXXXXXXX, ...]", where each "XXXXXXXX" represents an arbitrary course code, and the list should contain only those valid course codes based on the rules described in the explanation.
+2. If "or" is used between courses, only one course needs to be selected.
+3. If "and" is used between courses, both courses must be selected.
+4. If a non-course description like "permission from instructor" is present, return "[]".
+5. If no valid courses can be selected, return an empty list.
+6. In case of ambiguity, return "[]" only. 
+
+You will now be shown some examples to help you become familiar with the format. 
+
 BEGIN EXAMPLE 1
 INPUT: "Prerequisites: MAT132H5 or MAT135H5 or MAT137H5 or MAT157H5 or MAT135H1 or MATA29H3 or MATA30H3 or MATA31H3"
 OUTPUT: ["MAT135H5"]
@@ -7,25 +19,25 @@ END EXAMPLE 1
 BEGIN EXAMPLE 2
 INPUT: "Prerequisites: permission from instructor"
 OUTPUT: []
-Explanation: If you don't think a valid course code exists, return an empty list. In the absolute worst cast, Never return an error, always an empty list.
-END EXAMPLE 2
-
-BEGIN EXAMPLE 2
-INPUT: "Prerequisites: MAT257Y5 or (MAT236H5 and MAT244H5)"
-OUTPUT: ["MAT236H5", "MAT244H5"]
-Explanation: within the brackets, there is an "and" between the two courses. This means that BOTH courses must be selected.
+Explanation: If you don't think a valid course code exists, return an empty list. In the absolute worst case, Never return an error, always an empty list.
 END EXAMPLE 2
 
 BEGIN EXAMPLE 3
 INPUT: "Prerequisites: MAT257Y5 or (MAT236H5 and MAT244H5)"
-OUTPUT: ["MAT257Y5"]
-Explanation: Since there is an "or" statement between MAT257Y5 and the brackets containing the two other courses, only one needs to be selected.
-In this case, only "MAT257Y5" is selected.
+OUTPUT: ["MAT236H5", "MAT244H5"]
+Explanation: Within the brackets, there is an "and" between the two courses. This means that BOTH courses must be selected.
 END EXAMPLE 3
 
 BEGIN EXAMPLE 4
+INPUT: "Prerequisites: MAT257Y5 or (MAT236H5 and MAT244H5)"
+OUTPUT: ["MAT257Y5"]
+Explanation: Since there is an "or" statement between MAT257Y5 and the brackets containing the two other courses, only one needs to be selected.
+In this case, only "MAT257Y5" is selected.
+END EXAMPLE 4
+
+BEGIN EXAMPLE 5
 INPUT: "Prerequisites: MAT102H5 and (MAT134H5 or MAT136H5 or MAT137Y5 or MAT139H5 or MAT157Y5 or MAT159H5 or MAT233H5)"
-OUTPUT: ["MAT102H5", MAT136H5]
+OUTPUT: ["MAT102H5", "MAT136H5"]
 Explanation: There is an "and" between MAT102 and the several courses in the brackets, meaning MAT102 MUST BE selected and AT LEAST ONE of the courses in brackets must be selected.
 In this case, only "MAT136H5" is selected.
-END EXAMPLE 4
+END EXAMPLE 5
