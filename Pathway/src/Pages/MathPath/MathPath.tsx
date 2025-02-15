@@ -1,10 +1,11 @@
 import React from 'react'
+import Header from '../../components/Header';
 
 interface Props {}
 
 const MathPath = (props: Props) => {
   return (
-    <div>Math Path</div>
+    <Header title="Discover The Realm of Mathematics" />
   )
 }
 

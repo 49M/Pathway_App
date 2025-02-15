@@ -9,15 +9,15 @@ function Homepage() {
         <h1>Pathway Course Planner</h1>
       </div>
       <div className='button-container'>
-        <button>
-          <Link to="/mathpath">Mathematics</Link>
-        </button>
-        <button>
-          <Link to="/cspath">Computer Science</Link>
-        </button>
-        <button>
-          <Link to="/lspath">Life Science</Link>
-        </button>
+          <Link to="/mathpath">
+            <button>Mathematics</button>
+          </Link>
+          <Link to="/cspath">
+            <button>Computer Science</button>
+          </Link>
+          <Link to="/lspath">
+            <button>Life Science</button>
+          </Link>
       </div>
     </div>
   );

@@ -1,10 +1,11 @@
 import React from 'react'
+import Header from '../../components/Header';
 
 interface Props {}
 
 const LSPath = (props: Props) => {
   return (
-    <div>Life Science Path</div>
+    <Header title="Discover The Realm of Life Sciences" />
   )
 }
 
