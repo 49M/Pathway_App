@@ -1,14 +1,3 @@
-// import React from 'react'
-
-// interface Props {}
-
-// const Homepage = (props: Props) => {
-//   return (
-//     <div>Homepage</div>
-//   )
-// }
-
-// export default Homepage
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../styles/App.css';
