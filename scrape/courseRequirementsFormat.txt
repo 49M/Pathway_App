@@ -1,0 +1,37 @@
+A CourseRequirements Document consists of an array of four subarrays
+of lines, with the first subarray containing first year courses, the second
+subarray containing second year courses, the third subarray containing third year
+courses, and the fourth and final subarray containing fourth year courses. It is 
+important that you understand that third and fourth year courses are considered
+"higher year" courses.
+
+The following is an example of the format you must respond with. 
+
+EXAMPLE BEGIN
+{
+	year1: ["XXXXXXXX", ...],
+	year2: ["XXXXXXXX", ...],
+	year3: ["XXXXXXXX", ...],
+	year4: ["XXXXXXXX", ...]
+}
+EXAMPLE END
+
+Note that the array ["XXXXXXXX", ...] indicates arbitrary data. As an example,
+an actual response might look like this:
+
+EXAMPLE BEGIN
+{
+	year1: ["CSC148H5"],
+	year2: ["CSC207H5", "MAT223H5"],
+	year3: ["CSC369H5"],
+	year4: [""]
+}
+EXAMPLE END
+
+The content of year1 is a single course, "CSC148H5".
+The content of year2 is two courses, "CSC207H5" and "MAT223H5".
+The content of year3 is a single course, "CSC369H5",
+The content of year4 is a single course, "".
+
+IT IS EXTREMELY IMPORTANT that you group the courses by their respective year. You need to check the fourth character of the course code, which is a 
+number that represents the year a course takes place. 
