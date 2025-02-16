@@ -1,9 +1,8 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { SearchBar } from "./search-bar"
 import axios from "axios"
 import { Button } from "./button";
-import useRouter from "next/navigation";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import CourseList from "../CourseList";
 
@@ -16,15 +15,15 @@ export const CourseSearch = ({path}: {path: string}) => {
     const fetchData = () => {
         setStatus("Fetching courses from U of T, please wait...")
         async function set_courses() {
+            try {
                 const formData = new FormData();
                 formData.append("program_type", path)
                 const res = await axios.post('http://localhost:5328/set_courses', formData, { withCredentials: true })
-                if (res.status == 200) {
-                    setDisabled(false)
-                    localStorage.setItem("courses", JSON.stringify(res.data))
-                } else {
-                    setStatus(String(res.status))
-                }
+                setDisabled(false)
+                localStorage.setItem("courses", JSON.stringify(res.data))
+            } catch (error) {
+                setStatus(String(error))
+            }
         }
         set_courses()
     }   
@@ -74,7 +73,7 @@ export const Help = () => {
         <AccordionItem value="item-2">
             <AccordionTrigger>What should I search?</AccordionTrigger>
             <AccordionContent>
-                Give a description of some topics you are interested in, and Pathway will craft a schedule with courses that align with your interests.
+                Give a description of some topics you are interested in, and Pathway will craft a multi-year schedule with courses that align with your interests. You don't need to worry about prerequisities, since Pathway ensures that the schedule 
             </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
