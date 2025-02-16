@@ -67,4 +67,8 @@ export function SearchBar({onClick}: {onClick: any}) {
       </Accordion>
     </div>
   )
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7ed6515fa15a54e82d9950ee8e8a5c0f02aed0a4
