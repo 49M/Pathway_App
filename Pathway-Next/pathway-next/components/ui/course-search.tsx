@@ -5,6 +5,7 @@ import axios from "axios"
 import { Button } from "./button";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import CourseList from "../CourseList";
+import CoursePlan from "@/app/courseplan/page";
 
 export const CourseSearch = ({path}: {path: string}) => {
     const [status, setStatus] = useState("Waiting to fetch")
@@ -15,6 +16,11 @@ export const CourseSearch = ({path}: {path: string}) => {
     const fetchData = () => {
         setStatus("Fetching courses from U of T, please wait...")
         async function set_courses() {
+            if (localStorage.getItem("courses") != null) {
+                setStatus("Courses fetched from local storage")
+                setDisabled(false)
+                return
+            }
             try {
                 const formData = new FormData();
                 formData.append("program_type", path)
@@ -36,7 +42,6 @@ export const CourseSearch = ({path}: {path: string}) => {
                 formData.set("query", val)
                 formData.set("courses", courses)
                 const res = await axios.post("http://localhost:5328/interest_timeline", formData)
-                console.log(res.data)
                 setData(res.data)
             }
         }
@@ -52,9 +57,7 @@ export const CourseSearch = ({path}: {path: string}) => {
             <Button onClick={() => {fetchData()}} className='font-bold mb-5'>
                 Get courses
             </Button><span className="ml-4">Status: {status}</span></div>}
-            {!disabled &&
-            <div>  
-            </div>}
+            {!disabled && <CoursePlan data={data}/>}
             <SearchBar onClick={onClick} disabled={disabled}></SearchBar>
             
         </div>

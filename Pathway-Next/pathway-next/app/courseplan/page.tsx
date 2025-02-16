@@ -34,13 +34,13 @@ const myCoursesByYear: Record<number, CourseDict> = {
   },
 };
 
-const CoursePlan = () => {
+const CoursePlan = ({data}: any) => {
+    console.log(data)
   return (
-    <div className="flex flex-col space-y-5">
-      <div className="mb-10">
-        <Header title="Your Dream Course Plan!" />
+    <div className="flex flex-col space-y-5 mb-10">
+      <div className="">
       </div>
-      <div className="w-[50%] mx-auto mt-10">
+      <div className="w-full mx-auto">
         <Carousel>
           <CarouselContent>
             {Object.entries(myCoursesByYear).map(([year, courses]) => (
