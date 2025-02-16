@@ -68,15 +68,15 @@ export const Help = () => {
     return (
         <Accordion type="single" collapsible className="w-full mb-20 space-y-2">
         <AccordionItem value="item-1">
-            <AccordionTrigger>What is this?</AccordionTrigger>
+            <AccordionTrigger>What is Pathway?</AccordionTrigger>
             <AccordionContent>
-                Pathway is a tool that simplifies the course selection process for U of T students.
+            Pathway is an innovative platform that simplifies course selection at U of T, turning a complex and stressful process into a seamless discovery experience. Find the right courses with clarity and confidence.
             </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
             <AccordionTrigger>What should I search?</AccordionTrigger>
             <AccordionContent>
-                Give a description of some topics you are interested in, and Pathway will craft a multi-year schedule with courses that align with your interests. You don't need to worry about prerequisities, since Pathway ensures that the schedule 
+            Simply describe your interests, and Pathway will design a personalized multi-year course plan—prerequisites and requirements. Focus on your passion; we’ll map the journey.
             </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
@@ -90,7 +90,7 @@ export const Help = () => {
         <AccordionItem value="item-4">
             <AccordionTrigger>What is "Get courses"?</AccordionTrigger>
             <AccordionContent>
-            You need to click "Get courses" so that Pathway can use AI to analyze all of the courses at U of T that fall under the section you just picked.
+            Click "Get Courses", and let Pathway’s AI analyze U of T’s entire catalog to find the best courses for your chosen area.
             </AccordionContent>
         </AccordionItem>
     </Accordion>
