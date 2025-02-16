@@ -11,22 +11,17 @@ export const CourseSearch = ({path}: {path: string}) => {
     const [status, setStatus] = useState("Waiting to fetch")
     const [disabled, setDisabled] = useState(true)
     const [data, setData] = useState()
-    
+    const [ courses, setCourses ] = useState()
 
     const fetchData = () => {
         setStatus("Fetching courses from U of T, please wait...")
         async function set_courses() {
-            if (localStorage.getItem("courses") != null) {
-                setStatus("Courses fetched from local storage")
-                setDisabled(false)
-                return
-            }
             try {
                 const formData = new FormData();
                 formData.append("program_type", path)
                 const res = await axios.post('http://localhost:5328/set_courses', formData, { withCredentials: true })
                 setDisabled(false)
-                localStorage.setItem("courses", JSON.stringify(res.data))
+                setCourses(res.data)
             } catch (error) {
                 setStatus(String(error))
             }
@@ -36,11 +31,10 @@ export const CourseSearch = ({path}: {path: string}) => {
 
     const onClick = (val: string) => {
         async function interest_timeline() {
-            const courses = localStorage.getItem("courses")
             if (disabled == false && courses != null) {
                 const formData = new FormData()
                 formData.set("query", val)
-                formData.set("courses", courses)
+                formData.set("courses", JSON.stringify(courses))
                 const res = await axios.post("http://localhost:5328/interest_timeline", formData)
                 setData(res.data)
             }

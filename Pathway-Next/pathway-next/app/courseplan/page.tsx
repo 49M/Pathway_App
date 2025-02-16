@@ -35,26 +35,28 @@ const myCoursesByYear: Record<number, CourseDict> = {
 };
 
 const CoursePlan = ({data}: any) => {
-    console.log(data)
-  return (
-    <div className="flex flex-col space-y-5 mb-10">
-      <div className="">
-      </div>
-      <div className="w-full mx-auto">
-        <Carousel>
-          <CarouselContent>
-            {Object.entries(myCoursesByYear).map(([year, courses]) => (
-              <CarouselItem key={year}>
-                <CourseList year={Number(year)} courses={courses} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
-      </div>
-    </div>
-  );
+    if (data) {
+        return (
+            <div className="flex flex-col space-y-5 mb-10">
+              <div className="">
+              </div>
+              <div className="w-full mx-auto">
+                <Carousel>
+                  <CarouselContent>
+                    {Object.keys(data).map((index) => (
+                      <CarouselItem key={index}>
+                        <CourseList year={Number(index)} courses={data[index]} />
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious />
+                  <CarouselNext />
+                </Carousel>
+              </div>
+            </div>
+          );
+    }
+
 };
 
 export default CoursePlan;
