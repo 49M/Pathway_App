@@ -1,17 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Header from "@/components/Header";
-import CategoryBubble from "@/components/CategoryBubble";
-import {
-  Command,
-  CommandDialog,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
-  CommandShortcut,
-} from "@/components/ui/command"
+import Header from "@/components/Header"
 import { SearchBar } from "@/components/ui/search-bar";
 import { CourseSearch } from "@/components/ui/course-search";
 

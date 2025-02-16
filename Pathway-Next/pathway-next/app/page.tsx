@@ -9,7 +9,7 @@ import { DialogTitle } from '@/components/ui/dialog';
 import { useRouter } from 'next/navigation';
 
 const sections = [
-    {name: "Mathematical Sciences", href: '/section/mathemetical-sciences'},
+    {name: "Mathematical Sciences", href: '/section/mathematical-sciences'},
     {name: "Computer Science", href: '/section/computer-science'}, 
     {name: "Life Science", href: '/section/life-science'}
 ]
